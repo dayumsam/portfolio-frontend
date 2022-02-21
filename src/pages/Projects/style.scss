@@ -1,0 +1,53 @@
+@import "../../sass/main.scss";
+
+.work-section {
+  section {
+    margin-top: 4em;
+  }
+
+  .projects-wrapper {
+    margin: 2em 0 5em;
+
+    @include for-phone-only {
+      .row {
+        .feature-card {
+          flex-direction: column-reverse;
+
+          .img-wrapper {
+            margin-bottom: 1em;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    @include for-tablet-portrait-up {
+      .row {
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .feature-card {
+          flex-direction: column-reverse;
+          grid-column: span 2;
+          .img-wrapper {
+            margin-bottom: 1em;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    @include for-tablet-landscape-up {
+      .row {
+        .feature-card {
+          flex-direction: row;
+        }
+      }
+    }
+
+    .row {
+      margin: 1.5em 0;
+      display: grid;
+      grid-gap: 1.5em;
+    }
+  }
+}

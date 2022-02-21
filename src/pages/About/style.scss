@@ -1,0 +1,272 @@
+@import "../../sass/main.scss";
+
+.about {
+  position: relative;
+
+  .clip {
+    position: absolute;
+    right: 0;
+    bottom: -5em;
+
+    z-index: -1;
+
+    overflow: hidden;
+
+    @include for-phone-only {
+      width: 30em;
+      height: 30em;
+    }
+
+    @include for-tablet-portrait-up {
+      width: 40em;
+      height: 40em;
+    }
+
+    @include for-desktop-up {
+      width: 50em;
+      height: 50em;
+    }
+
+    .img-wrapper {
+      transform: translate(20%, 30%);
+
+      display: grid;
+      place-items: center;
+
+      svg {
+        animation: pattern-rotation 100s linear infinite;
+        fill: #b08e8d;
+
+        height: 95%;
+      }
+    }
+  }
+}
+
+.about-section {
+  display: flex;
+
+  margin-top: 3.5em !important;
+
+  .profile-img {
+    border: 0.2em solid $font-color;
+    margin-right: 3em;
+    width: 50%;
+  }
+
+  .content {
+    .heading {
+      font-family: "Montserrat Alternates", sans-serif;
+      font-size: 3em;
+      margin-bottom: 0.2em;
+    }
+  }
+
+  @include for-phone-only {
+    flex-direction: column;
+
+    .profile-img {
+      width: 100%;
+      margin-bottom: 1.5em;
+    }
+  }
+
+  @include for-tablet-portrait-up {
+    align-items: center;
+
+    .profile-img {
+      width: 50%;
+    }
+  }
+}
+
+.story-section {
+  ._content {
+    margin-top: 1.5em;
+  }
+
+  @include for-phone-only {
+    ._content {
+      max-width: 100%;
+    }
+  }
+
+  @include for-tablet-portrait-up {
+    ._content {
+      max-width: 60%;
+    }
+  }
+}
+
+.pattern1 {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  transform: translate(-35%, -35%);
+
+  z-index: -1;
+
+  height: 8em;
+  width: 8em;
+
+  opacity: 0.8;
+
+  svg {
+    animation: pattern-rotation 100s linear infinite;
+    fill: #b08e8d;
+  }
+}
+
+.stats {
+  display: flex;
+  margin: 3em 0;
+
+  .stat {
+    margin-right: 4em;
+
+    &__number {
+      font-family: "Montserrat Alternates", sans-serif;
+      font-size: 2.5em;
+    }
+  }
+}
+
+.work {
+  display: grid;
+  grid-gap: 1.5em;
+
+  @include for-phone-only {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.5fr;
+    .feature-card {
+      flex-direction: column-reverse;
+
+      .img-wrapper {
+        margin-bottom: 1em;
+        width: 100%;
+      }
+    }
+  }
+
+  @include for-tablet-portrait-up {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .feature-card {
+      flex-direction: column-reverse;
+      grid-column: span 2;
+
+      .img-wrapper {
+        margin-bottom: 1em;
+        width: 100%;
+      }
+    }
+  }
+
+  @include for-tablet-landscape-up {
+    .feature-card {
+      flex-direction: row;
+    }
+  }
+}
+
+.testimonial-cards {
+  margin-top: 2rem;
+
+  display: grid;
+
+  grid-auto-rows: auto;
+  grid-gap: 1.5em;
+
+  @include for-phone-only {
+    .testimonial-card:last-of-type {
+      display: none;
+    }
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  @include for-tablet-portrait-up {
+    .testimonial-card:last-of-type {
+      display: none;
+    }
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include for-tablet-landscape-up {
+    .testimonial-card:last-of-type {
+      display: block;
+    }
+
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .testimonial-card {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.5em;
+    border: 0.2em solid $font-color;
+    background-color: $bg-shade1;
+
+    .testimonial-about {
+      display: flex;
+      align-items: center;
+    }
+
+    .testimonial-img {
+      height: 5em;
+      width: 5em;
+      background-color: grey;
+      margin-right: 1em;
+      border: 0.15em solid $font-color;
+    }
+
+    .testimonial-title {
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+
+    .testimonial {
+      margin: 1em 0;
+    }
+
+    .testimonial-name {
+      font-weight: bold;
+      font-size: 1.3em;
+      margin-top: auto;
+    }
+
+    .testimonial-designation {
+      font-size: 0.8em;
+    }
+  }
+}
+
+.collab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .collab-tagline {
+    font-size: 3em;
+  }
+  .btn {
+    font-size: 1em;
+    margin: 2em 0;
+    padding: 1em 2em;
+  }
+
+  @include for-phone-only {
+    padding: 0 0 5em;
+    align-items: baseline;
+  }
+
+  @include for-tablet-portrait-up {
+    padding: 5em 0 7em;
+    align-items: center;
+  }
+}

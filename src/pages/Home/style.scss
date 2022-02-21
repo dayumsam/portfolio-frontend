@@ -1,0 +1,78 @@
+@import "../../sass/main.scss";
+
+.home-content {
+  .heading {
+    font-family: "Jost", sans-serif;
+    font-weight: 900;
+    line-height: 1.2em;
+  }
+
+  @include for-phone-only {
+    .heading {
+      font-size: 3em;
+      max-width: 20rem;
+    }
+  }
+
+  @include for-tablet-portrait-up {
+    .heading {
+      font-size: 4em;
+      max-width: 40rem;
+    }
+  }
+
+  .sub-heading {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    a {
+      color: $font-color;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+}
+
+.clip {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+
+  opacity: 0.6;
+
+  z-index: -1;
+
+  overflow: hidden;
+
+  @include for-phone-only {
+    width: 30em;
+    height: 30em;
+  }
+
+  @include for-tablet-portrait-up {
+    width: 40em;
+    height: 40em;
+  }
+
+  .img-wrapper {
+    transform: translate(20%, 30%);
+
+    display: grid;
+    place-items: center;
+
+    svg {
+      animation: pattern-rotation 100s linear infinite;
+      fill: #b08e8d;
+
+      height: 95%;
+    }
+  }
+}
+
+@keyframes pattern-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

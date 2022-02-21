@@ -1,0 +1,156 @@
+@import "./sass/main.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 5px;
+}
+
+#root {
+  padding: 2.5em 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  color: $font-color;
+
+  background-color: $background-color;
+  overflow-x: hidden;
+
+  @include for-phone-only {
+    font-size: 12px;
+  }
+
+  @include for-tablet-portrait-up {
+    font-size: 12px;
+  }
+
+  @include for-tablet-landscape-up {
+    font-size: 13px;
+  }
+
+  @include for-desktop-up {
+    font-size: 1vw;
+  }
+}
+
+p {
+  font-size: 1.2em;
+}
+
+//components
+.btn {
+  padding: 0.5em 2em;
+  display: inline-block;
+  color: unset;
+  cursor: pointer;
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: 100ms all;
+
+  &--dark {
+    border: 0.2em solid $font-color;
+    background-color: transparent;
+    color: $font-color;
+
+    &:hover {
+      color: $background-color;
+      background-color: $font-color;
+    }
+  }
+
+  &--primary {
+    border: 0.2em solid $primary-color;
+    background-color: $primary-color;
+    color: $background-color;
+
+    &:hover {
+      color: $primary-color;
+      background-color: transparent;
+    }
+  }
+
+  &--secondary {
+    border: 0.2em solid $secondary-color;
+    background-color: $secondary-color;
+    color: $background-color;
+
+    &:hover {
+      color: $secondary-color;
+      background-color: transparent;
+    }
+  }
+
+  &--outline {
+    border: 0.2em solid $primary-color;
+    background-color: transparent;
+    color: $primary-color;
+
+    &:hover {
+      color: $background-color;
+      background-color: $primary-color;
+    }
+  }
+}
+
+section {
+  margin-top: 6em;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  z-index: 2;
+
+  width: 100%;
+
+  ._heading {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 2.5em;
+  }
+}
+
+.section {
+  .container {
+    padding: 0 2.5em;
+    max-width: 1920px;
+    margin: auto;
+  }
+}
+
+form {
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+
+    label {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+
+    input,
+    textarea {
+      font-family: inherit;
+      font-size: 1em;
+      background-color: transparent;
+      padding: 0.5em 1em;
+    }
+  }
+}
