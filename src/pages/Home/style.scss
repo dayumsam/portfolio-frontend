@@ -5,6 +5,15 @@
     font-family: "Jost", sans-serif;
     font-weight: 900;
     line-height: 1.2em;
+
+    .type {
+      background-color: $font-color;
+      color: $background-color;
+    }
+
+    .Typewriter {
+      display: inline;
+    }
   }
 
   @include for-phone-only {
@@ -56,8 +65,8 @@
   .img-wrapper {
     transform: translate(20%, 30%);
 
-    display: grid;
-    place-items: center;
+    // display: grid;
+    // place-items: center;
 
     svg {
       animation: pattern-rotation 100s linear infinite;

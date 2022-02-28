@@ -17,13 +17,13 @@ export default function ProjectCard({featured, data}) {
                 {data.work.description}
                 </p>
 
-                <a href="/" className="project__link">View Case Study</a>
+                <a href={data.work.url} className="project__link">View Case Study</a>
             </div>
 
             
             {featured ? 
                     <>
-                        {data.work ? <div className="img-wrapper" style={{backgroundImage: `url(${process.env.REACT_APP_API_URL}${data.work.feature_image.url}`}}/> : <></>}
+                        {data.work ? <div className="img-wrapper" style={{backgroundImage: `url(${process.env.REACT_APP_API_URL}${data.work.preview_image.url}`}}/> : <></>}
                     </>
                 : <></>}
         </div>
