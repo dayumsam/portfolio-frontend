@@ -38,3 +38,4 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         source: "./build/*"
         target: "/home/dayumsam/web/dayumsam.com"
+        strip_components: 1
