@@ -100,7 +100,7 @@ export default function About() {
                                 <p className="testimonial">{testimonial.testimonial}</p>
     
                                 <div className="testimonial-about">
-                                    {testimonial.image ? <img src={`http://localhost:1337${testimonial.image.url}`} alt="" className="testimonial-img" /> : <></>}
+                                    {testimonial.image ? <img src={`${baseUrl}${testimonial.image.url}`} alt="" className="testimonial-img" /> : <></>}
                                     <div>
                                     <p className="testimonial-name">
                                         {testimonial.name}
