@@ -1,0 +1,41 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    strategy:
+      matrix:
+        node-version: ['14']
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run the tests and generate coverage report
+      run: npm test -- --coverage
+
+    - name: Build
+      run: npm run build
+        
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        source: "./build/*"
+        target: "/home/dayumsam/web/dayumsam.com"
