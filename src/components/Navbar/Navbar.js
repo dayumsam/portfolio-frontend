@@ -16,6 +16,8 @@ export default function Navbar() {
         _gotcha: '',
     })
 
+    let baseUrl = process.env.REACT_APP_API_URL
+
     const inputsHandler = (e) =>{
         setInputField( {[e.target.name]: e.target.value} )
     }
@@ -24,12 +26,12 @@ export default function Navbar() {
         e.preventDefault()
 
         if(inputField['_gotcha'] !== undefined){
-            //todo
+            return;
         }
         else{
             submitButton.current.innerHTML = 'Sending...';
             axios
-            .post('http://localhost:1337/api/contact/', {
+            .post(`${baseUrl}/api/contact/`, {
                 email: inputField.email,
                 message: inputField.message,
             })
@@ -45,11 +47,6 @@ export default function Navbar() {
 
     const toggleContact = () => {
         setContactActive(!contactActive);
-        // if(contactActive){
-        //     document.querySelector("body").style.overflowY = "auto"
-        // }else{
-        //     document.querySelector("body").style.overflowY = "hidden"
-        // }
     }
 
     const toggleMenu = () => {
