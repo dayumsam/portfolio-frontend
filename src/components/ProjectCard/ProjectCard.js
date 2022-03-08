@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { MouseContext } from "../../context/mouse-context";
 
 import './style.scss'
 
 export default function ProjectCard({featured, data}) {
+
+    const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
     return (
         <div className={featured ? 'feature-card' : 'blog-card'}>
@@ -17,7 +20,7 @@ export default function ProjectCard({featured, data}) {
                 {data.work.description}
                 </p>
 
-                <a href={data.work.url} className="project__link">View Case Study</a>
+                <a href={data.work.url} onMouseEnter={() => cursorChangeHandler("large")} onMouseLeave={() => cursorChangeHandler("")} className="project__link">View Case Study</a>
             </div>
 
             

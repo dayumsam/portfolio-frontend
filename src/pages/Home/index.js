@@ -1,18 +1,18 @@
-import React from 'react'
+import { useContext } from "react";
 import Typewriter from 'typewriter-effect';
-
-import './style.scss'
 
 import {ReactComponent as Pattern1} from '../../assets/pattern2.svg';
 
-export default function index() {
+import { MouseContext } from "../../context/mouse-context";
 
-    // new Typewriter('#typewriter', {
-    //     strings: ['Hello', 'World'],
-    //     autoStart: true,
-    // });
+import './style.scss'
+
+export default function Home() {
+
+    const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
     return (
+        
         <div className="section" style={{marginTop:'auto'}}>
             <div className="container home-content">
                 <div className="clip">
@@ -34,10 +34,13 @@ export default function index() {
                 </div>
 
                 <div className="sub-heading">
-                   <p>Currently managing <a href="https://www.blindvsnry.com/">blindvsnry</a> and CTO at <a href="https://getimbued.com/">Imbue Education</a></p>
+                   <p>Currently managing&nbsp;
+                       <a onMouseEnter={() => cursorChangeHandler("large")} onMouseLeave={() => cursorChangeHandler("")} href="https://www.blindvsnry.com/">blindvsnry</a> and CTO at&nbsp;
+                       <a onMouseEnter={() => cursorChangeHandler("large")} onMouseLeave={() => cursorChangeHandler("")} href="https://getimbued.com/">Imbue Education</a>
+                    </p>
                 </div>
 
-                <a href="/projects/" className="btn btn--primary">
+                <a href="/projects/" onMouseEnter={() => cursorChangeHandler("large")} onMouseLeave={() => cursorChangeHandler("")} className="btn btn--primary">
                     See my work
                 </a>
 

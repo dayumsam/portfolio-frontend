@@ -29,8 +29,13 @@ body {
   font-family: "Jost", sans-serif;
   color: $font-color;
 
+  background: url("./assets/paper.png");
+
   background-color: $background-color;
   overflow-x: hidden;
+
+  //cursor
+  cursor: none;
 
   @include for-phone-only {
     font-size: 12px;

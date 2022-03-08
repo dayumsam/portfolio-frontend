@@ -1,3 +1,7 @@
+import { useContext } from "react";
+
+import Cursor from './components/Cursor'
+
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer'
 
@@ -12,10 +16,16 @@ import {
   Route
 } from "react-router-dom";
 
+import { MouseContext } from "./context/mouse-context"; 
+
 function App() {
+
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+
   return (
     <BrowserRouter>
-      <Navbar/>
+      <Cursor/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home/>} />  
         <Route path="/about" element={<About/>} />  

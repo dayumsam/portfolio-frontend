@@ -1,3 +1,6 @@
+import React, { useContext } from "react";
+import { MouseContext } from "../../context/mouse-context";
+
 import useFetchData from '../../hooks/use-fetch-data'
 
 import './style.scss'
@@ -8,6 +11,9 @@ import {ReactComponent as Pattern1} from '../../assets/pattern2.svg';
 
 
 export default function About() {
+
+    const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+
     let baseUrl = process.env.REACT_APP_API_URL
     let url = `${baseUrl}/api/about-page/`;
 
@@ -77,7 +83,6 @@ export default function About() {
                                 })
                             : <></>
                         }
-                        {/* <ProjectCard/> */}
                     </div>
                 </section>
 
@@ -119,7 +124,7 @@ export default function About() {
 
                 <section className="centered collab">
                     <h1 className="collab-tagline">Lets create something together!</h1>
-                    <button className="btn btn--primary" >Drop me a message!</button>
+                    <button className="btn btn--primary" onMouseEnter={() => cursorChangeHandler("large")} onMouseLeave={() => cursorChangeHandler("")} >Drop me a message!</button>
                 </section>
             </div>
         </div>

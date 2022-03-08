@@ -1,9 +1,13 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import axios from 'axios';
+
+import { MouseContext } from "../../context/mouse-context";
 
 import './style.scss';
 
 export default function Navbar() {
+
+    const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
     const [contactActive, setContactActive] = useState(false);
     const [menuActive, setMenuActive] = useState(false);
@@ -98,7 +102,7 @@ export default function Navbar() {
                             </div>
 
                             <input type="text" onChange={inputsHandler} name="_gotcha" style={{display:'none'}} />
-                            <button type="submit" ref={submitButton} className="btn btn--submit">Send</button>
+                            <button type="submit" onMouseEnter={() => cursorChangeHandler("large")} onMouseLeave={() => cursorChangeHandler("")} ref={submitButton} className="btn btn--submit">Send</button>
                         </form>
                     </div>
                 </div>
@@ -115,9 +119,9 @@ export default function Navbar() {
                 <a href="/" className={`logo ${menuActive ? ' light' : ''}`}>dayumsam.</a>
                 <div className="nav-links">
                     {
-                        links.map((link, index) => <a key={index}  href={link.link} className="nav-link">{link.name}</a> )
+                        links.map((link, index) => <a key={index} onMouseEnter={() => cursorChangeHandler("large")} onMouseLeave={() => cursorChangeHandler("")} href={link.link} className="nav-link">{link.name}</a> )
                     }
-                    <span className={`nav-link${contactActive ? ' active' : ''}`} onClick={toggleContact}>Get in Touch</span>
+                    <span className={`nav-link${contactActive ? ' active' : ''}`} onMouseEnter={() => cursorChangeHandler("large")} onMouseLeave={() => cursorChangeHandler("")} onClick={toggleContact}>Get in Touch</span>
 
                     {contactActive ? <button className={`btn btn--dark`} onClick={toggleContact}>Close</button> : <button className="btn btn--dark" onClick={toggleMenu}>{menuActive ? 'Close' : 'Menu'}</button>}
                     
