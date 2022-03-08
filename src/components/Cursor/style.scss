@@ -1,0 +1,56 @@
+@import "../../sass/main.scss";
+
+.cursor {
+  // @include for-phone-only {
+  //   display: none;
+  // }
+
+  // @include for-tablet-portrait-up {
+  //   display: none;
+  // }
+
+  // @include for-desktop-up {
+  //   display: block;
+  // }
+
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+
+  //cursor size
+  padding: 0.4em;
+
+  border-radius: 50%;
+  pointer-events: none;
+
+  //   background-color: $background-color;
+
+  mix-blend-mode: difference;
+  border: 0.2em solid $background-color;
+
+  transition: 0.2s transform;
+  transition-property: transform, background-color;
+
+  &.large {
+    border: 0.15em solid $font-color;
+    background-color: white;
+    transform: scale(3);
+  }
+
+  &.hidden {
+    animation: hideCursor 0.3s;
+    visibility: hidden;
+  }
+
+  @keyframes hideCursor {
+    0% {
+      visibility: visible;
+      transform: scale(2);
+    }
+    90% {
+      transform: scale(0);
+      visibility: hidden;
+    }
+  }
+}

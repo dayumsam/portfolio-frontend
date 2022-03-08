@@ -40,23 +40,6 @@
       font-weight: bold;
 
       position: relative;
-
-      &::after {
-        content: "";
-        position: absolute;
-        background-color: $font-color;
-        height: 0.15em;
-        width: 0%;
-        bottom: 0;
-        left: 0;
-        transition: 0.2s width;
-      }
-
-      &:hover {
-        &::after {
-          width: 100%;
-        }
-      }
     }
   }
 }
