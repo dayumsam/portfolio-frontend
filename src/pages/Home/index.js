@@ -1,4 +1,6 @@
 import { useContext } from "react";
+
+import { motion } from "framer-motion"
 import Typewriter from 'typewriter-effect';
 
 import {ReactComponent as Pattern1} from '../../assets/pattern2.svg';
