@@ -108,7 +108,7 @@ export default function Navbar() {
                 </div>
             </div>
             <div className={`menu${menuActive ? ' active' : ''}`}>
-                <div className="panel">
+                <div className="panel"> 
                     {
                         links.map((link, index) => <a key={index}  href={link.link} className="nav-link">{link.name}</a> )
                     }
@@ -123,7 +123,7 @@ export default function Navbar() {
                     }
                     <span className={`nav-link${contactActive ? ' active' : ''}`} onMouseEnter={() => cursorChangeHandler("large")} onMouseLeave={() => cursorChangeHandler("")} onClick={toggleContact}>Get in Touch</span>
 
-                    {contactActive ? <button className={`btn btn--dark`} onClick={toggleContact}>Close</button> : <button className="btn btn--dark" onClick={toggleMenu}>{menuActive ? 'Close' : 'Menu'}</button>}
+                    {contactActive ? <button className={`btn btn--dark`} onClick={toggleContact}>Close</button> : <button className="btn btn--dark" onClick={toggleMenu}  onMouseEnter={() => cursorChangeHandler("large")} onMouseLeave={() => cursorChangeHandler("")}>{menuActive ? 'Close' : 'Menu'}</button>}
                     
                 </div>
             </div>

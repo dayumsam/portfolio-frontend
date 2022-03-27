@@ -25,6 +25,35 @@
   flex-direction: column;
 }
 
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: $background-color;
+  // background-color: $font-color;
+  height: 100vh;
+  width: 100vw;
+
+  z-index: 80;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  .wrapper {
+    h1 {
+      font-size: 10rem;
+      font-family: "Montserrat Alternates", sans-serif;
+      line-height: 1.5em;
+
+      // color: $background-color;
+      color: $font-color;
+    }
+  }
+}
+
 body {
   font-family: "Jost", sans-serif;
   color: $font-color;

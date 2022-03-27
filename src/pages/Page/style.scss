@@ -54,12 +54,17 @@
 
       .preview-image {
         cursor: pointer;
-        height: 6em;
+        height: fit-content;
         width: 12em;
         border: 0.2em $font-color solid;
 
         background-position: center;
         background-size: contain;
+
+        img {
+          width: 100%;
+          display: block;
+        }
       }
     }
   }
