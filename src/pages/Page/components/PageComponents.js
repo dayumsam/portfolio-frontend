@@ -30,10 +30,9 @@ function ImageSection({data}) {
         {
           imageData.map((image,index) => {
             return(
-              // <div className="preview-image" key={image.id} onClick={()=>{setCurrentImage(index)}} style={{backgroundImage:`url(${process.env.REACT_APP_API_URL}${image.formats.small.url})`}}/>
-
               <div className="preview-image" key={image.id} onClick={()=>{setCurrentImage(index)}}>
-                <img src={`${process.env.REACT_APP_API_URL}${image.formats ? image.formats.small.url : image.url}`} />
+                <img src={`${process.env.REACT_APP_API_URL}${image.url}`} />
+                {/* <img src={`${process.env.REACT_APP_API_URL}${image.formats ? image.formats.small.url : image.url}`} /> */}
               </div>
             )
           })
