@@ -16,10 +16,13 @@ import Projects from './pages/Projects/Projects'
 import Page from './pages/Page/Page'
 import Error from "./pages/Error/Error";
 
+import PsychVideo from "./pages/psych-video/PsychVideo";
+
 import {
   BrowserRouter,
   Routes,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 import { MouseContext } from "./context/mouse-context"; 
@@ -57,6 +60,7 @@ function App() {
         <Route path="/" element={<Home/>} />  
         <Route path="/about" element={<About/>} />  
         <Route path="/projects" element={<Projects/>} /> 
+        <Route path="/psych-video" element={<PsychVideo/>} /> 
         <Route path="/work/:id" element={<Page/>} />
         <Route path="*" element={<Error/>} />
       </Routes>
