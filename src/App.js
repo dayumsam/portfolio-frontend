@@ -28,8 +28,6 @@ import {
 import { MouseContext } from "./context/mouse-context"; 
 
 function App() {
-  useEffect(() => console.log(true), []);
-
   return (
     <BrowserRouter>
 
